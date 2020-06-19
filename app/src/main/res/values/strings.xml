@@ -24,6 +24,16 @@
     <string name="calculate">Calculate</string>
     <string name="bmi_number" />
     <string name="calcBtn">Calculate</string>
+    <string name="name">Name</string>
+    <string name="nameEdit" />
+    <string name="surname">Surname</string>
+    <string name="surnameEdit" />
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
+    <string name="emailEdit" />
+    <string name="save">Save</string>
+    <string name="header_text" />
+    <string name="copyright">© Copyright 2020, Vitaminute</string>
 
 
 </resources>

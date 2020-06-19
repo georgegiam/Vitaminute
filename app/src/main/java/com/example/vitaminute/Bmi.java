@@ -26,7 +26,7 @@ public class Bmi extends AppCompatActivity {
 
         radioGroup = (RadioGroup) findViewById(R.id.gender_radio_group);
         male = (RadioButton) findViewById(R.id.male_radio);
-        male = (RadioButton) findViewById(R.id.female_radio);
+        female = (RadioButton) findViewById(R.id.female_radio);
         height = (EditText) findViewById(R.id.height_editText);
         weight = (EditText) findViewById(R.id.weight_editText);
         results = (TextView) findViewById(R.id.bmi_number_textView);

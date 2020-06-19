@@ -20,8 +20,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Calculate BMI"
-                android:textColor="#ffff" />
+                android:text="BMI Calculator"
+                android:textColor="#ffff"
+                android:textSize="24sp" />
         </androidx.appcompat.widget.Toolbar>
 
         <TableLayout
