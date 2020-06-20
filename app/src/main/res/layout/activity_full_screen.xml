@@ -4,34 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Gallery">
+    tools:context=".FullScreenActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorPrimary"
+        tools:ignore="MissingConstraints">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Gallery"
+            android:text="Full Screen View"
             android:textColor="#ffff"
             android:textSize="24sp" />
     </androidx.appcompat.widget.Toolbar>
 
-    <GridView
-        android:id="@+id/grid_view"
-        android:layout_marginTop="100dp"
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:numColumns="3"
-        android:columnWidth="90dp"
-        android:horizontalSpacing="10dp"
-        android:verticalSpacing="10dp"
-        android:gravity="center"
-        android:stretchMode="columnWidth">
-
-    </GridView>
+        android:paddingTop="60dp"
+        android:id="@+id/image_view"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

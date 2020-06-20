@@ -33,6 +33,6 @@
     <activity
         android:id="@+id/nav_our_team"
         android:name="com.example.vitaminute.OurTeam"
-        android:label="@string/menu_bmi"
+        android:label="@string/menu_our_team"
         tools:layout="@layout/activity_our_team" />
 </navigation>
