@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "131369578519",
+    "firebase_url": "https://vitaminute-fe8eb.firebaseio.com",
+    "project_id": "vitaminute-fe8eb",
+    "storage_bucket": "vitaminute-fe8eb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:131369578519:android:d277125da740b0522cec52",
+        "android_client_info": {
+          "package_name": "com.example.vitaminute"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "131369578519-1gp7o36d6cn62nocsdmhojupnts0iup8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vitaminute",
+            "certificate_hash": "1964e2a37ba4777e1d7152685c0bc5ba8212ddc5"
+          }
+        },
+        {
+          "client_id": "131369578519-3bhjlpno4c29u6uh964tb9jpk6h9jhcc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxzPKllAIr7ssXgXSbllyMVNoBWBeB1kQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "131369578519-3bhjlpno4c29u6uh964tb9jpk6h9jhcc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

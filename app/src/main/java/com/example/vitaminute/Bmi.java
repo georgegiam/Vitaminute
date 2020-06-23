@@ -1,7 +1,9 @@
 package com.example.vitaminute;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +18,6 @@ public class Bmi extends AppCompatActivity {
     RadioGroup radioGroup;
     RadioButton male, female;
     private EditText height, weight;
-    private TextView results;
     private Button calculate;
 
     @Override
@@ -29,7 +30,7 @@ public class Bmi extends AppCompatActivity {
         female = (RadioButton) findViewById(R.id.female_radio);
         height = (EditText) findViewById(R.id.height_editText);
         weight = (EditText) findViewById(R.id.weight_editText);
-        results = (TextView) findViewById(R.id.bmi_number_textView);
+
         calculate = (Button) findViewById(R.id.calc_btn);
 
         // trigger the calculate button
@@ -57,6 +58,15 @@ public class Bmi extends AppCompatActivity {
         String weightValue = weight.getText().toString();
         String bmiLabel = "";
         String res = "";
+
+        if (heightValue.isEmpty()) {
+            height.setError("Please provide your height");
+            height.requestFocus();
+        }
+        else if (weightValue.isEmpty()) {
+            weight.setError("Please provide your weight");
+            weight.requestFocus();
+        }
 
         // checks if the user has field the inputs
         if (heightValue != null && !"".equals(heightValue) && weightValue != null && !"".equals(weightValue)) {
@@ -94,10 +104,11 @@ public class Bmi extends AppCompatActivity {
                     break;
             }
 
-            // calling the display function (to display results)
-            res = bmi + "\n\n" + bmiLabel;
-            results.setText(res);
+            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            alert.setTitle("Results");
+            alert.setMessage("Your BMI is: " + bmi + "\n" + "You belong in " + bmiLabel + " category");
+            alert.create().show();
+
         }
     }
-
 }
