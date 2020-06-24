@@ -1,6 +1,7 @@
 package com.example.vitaminute;
 
 public class Users {
+    // defining the user variables
     private String name, surname , email, phone;
 
     // constructor

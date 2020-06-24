@@ -13,9 +13,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Bmi extends AppCompatActivity {
 
+    // defining the radio group
     RadioGroup radioGroup;
+    // defining the radio buttons (male and female)
     RadioButton male, female;
+    // defining the EditText (weight and height)
     private EditText height, weight;
+    // defining the calculate button
     private Button calculate;
 
     @Override
@@ -23,6 +27,7 @@ public class Bmi extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi);
 
+        // linking variables with the ids
         radioGroup = (RadioGroup) findViewById(R.id.gender_radio_group);
         male = (RadioButton) findViewById(R.id.male_radio);
         female = (RadioButton) findViewById(R.id.female_radio);
@@ -35,16 +40,17 @@ public class Bmi extends AppCompatActivity {
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // checking the value of the radio group
                 int gen = radioGroup.getCheckedRadioButtonId();
 
-                if (gen == -1){
+                // case no radio button selected
+                if (gen == -1)
                     // no gender selected
                     Toast.makeText(getApplicationContext(), "Please select gender", Toast.LENGTH_LONG);
-                }
-                else {
+                // case one of two radio buttons selected
+                else
                     // call the calculate function
                     calculateBmi(gen);
-                }
             }
         });
     }
@@ -52,33 +58,43 @@ public class Bmi extends AppCompatActivity {
     // calculate function
     public void calculateBmi(int gen) {
         // getting height and weight values form the input fields (casted to String)
+        // getting the height value from the input field and convert to string
         String heightValue = height.getText().toString();
+        // getting the weight value from the input field and convert to string
         String weightValue = weight.getText().toString();
+        // the BMI category
         String bmiLabel = "";
-        String res = "";
 
+        // checking if the height input filed is empty
         if (heightValue.isEmpty()) {
+            // setting an error message
             height.setError("Please provide your height");
+            // creating a red border to the height input field
             height.requestFocus();
         }
+        // checking if the weight input filed is empty
         else if (weightValue.isEmpty()) {
+            // setting an error message
             weight.setError("Please provide your weight");
+            // creating a red border to the weight input field
             weight.requestFocus();
         }
 
-        // checks if the user has field the inputs
+        // if all the fields are filled in
         if (heightValue != null && !"".equals(heightValue) && weightValue != null && !"".equals(weightValue)) {
-            // parsing weight and height in float
+            // parsing height in float
             float heightFloat = Float.parseFloat(heightValue);
+            // parsing weight in float
             float weightFloat = Float.parseFloat(weightValue);
 
-            // bmi formula
+            // calculating the BMI
             float bmi = weightFloat/(heightFloat/100 * heightFloat/100);
 
-
+            // case of being male or female
             switch (gen) {
                 // case gender is male
                 case R.id.male_radio:
+                    // BMI classification
                     if (bmi < 19.5)
                         bmiLabel = "Underweight";
                     if (bmi >= 19.5 && bmi <= 24.9)
@@ -92,6 +108,7 @@ public class Bmi extends AppCompatActivity {
                     break;
                 // case gender is female
                 case R.id.female_radio:
+                    // BMI classification
                     if (bmi < 18.5)
                         bmiLabel = "Underweight";
                     if (bmi >= 18.5 && bmi <= 23.5)
@@ -105,15 +122,15 @@ public class Bmi extends AppCompatActivity {
                     break;
             }
 
-            // set the results modal
+            // set the results alert dialog
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
-            // set the modal title
+            // set the alert dialog title
             alert.setTitle("Results");
-            //set the modal message (the results)
+            //set the alert dialog message (the results)
             alert.setMessage("Your BMI is: " + bmi + "\n" + "You belong in the " + bmiLabel + " category");
             // set the ok button
             alert.setNegativeButton("Ok", null);
-            // display the modal
+            // display the alert dialog
             alert.create().show();
 
         }
