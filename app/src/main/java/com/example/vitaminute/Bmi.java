@@ -1,17 +1,15 @@
 package com.example.vitaminute;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Bmi extends AppCompatActivity {
 
@@ -77,7 +75,9 @@ public class Bmi extends AppCompatActivity {
             // bmi formula
             float bmi = weightFloat/(heightFloat/100 * heightFloat/100);
 
+
             switch (gen) {
+                // case gender is male
                 case R.id.male_radio:
                     if (bmi < 19.5)
                         bmiLabel = "Underweight";
@@ -90,6 +90,7 @@ public class Bmi extends AppCompatActivity {
                     if (bmi > 40)
                         bmiLabel = "Obese 3";
                     break;
+                // case gender is female
                 case R.id.female_radio:
                     if (bmi < 18.5)
                         bmiLabel = "Underweight";
@@ -104,9 +105,15 @@ public class Bmi extends AppCompatActivity {
                     break;
             }
 
+            // set the results modal
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            // set the modal title
             alert.setTitle("Results");
-            alert.setMessage("Your BMI is: " + bmi + "\n" + "You belong in " + bmiLabel + " category");
+            //set the modal message (the results)
+            alert.setMessage("Your BMI is: " + bmi + "\n" + "You belong in the " + bmiLabel + " category");
+            // set the ok button
+            alert.setNegativeButton("Ok", null);
+            // display the modal
             alert.create().show();
 
         }
