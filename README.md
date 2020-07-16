@@ -12,6 +12,13 @@ It is also suitable for learning how to use and react with Google Firebase as th
   - BMI Calculator
   - Photo Gallery 
   - Contact form (conected with Google Firebase)
+  
+# Dependencies  
+
+Computer with >= 8 RAM
+Windows 10 (suggested)
+Java (https://www.java.com/en/download/win10.jsp)
+
 
 # Installation & Usage
 
