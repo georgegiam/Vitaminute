@@ -13,7 +13,7 @@ It is also suitable for learning how to use and react with Google Firebase as th
   - Photo Gallery 
   - Contact form (conected with Google Firebase)
 
-# Installation and usage
+# Installation and Usage
 
 You can use the app either in an Android emulator or in your real Android device. 
 
