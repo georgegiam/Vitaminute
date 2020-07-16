@@ -15,9 +15,9 @@ It is also suitable for learning how to use and react with Google Firebase as th
   
 # Dependencies  
 
-Computer with >= 8 RAM
-Windows 10 (suggested)
-Java (https://www.java.com/en/download/win10.jsp)
+  - Computer with >= 8 RAM
+  - Windows 10 (suggested)
+  - Java (https://www.java.com/en/download/win10.jsp)
 
 
 # Installation & Usage
