@@ -1,4 +1,4 @@
-# Vitaminute
+# About
 
 **Vitaminute** is a health based Android App created for the needs of the undergraduate course "Web Programming" in the Department of Digital System at University of Piraues.
 
